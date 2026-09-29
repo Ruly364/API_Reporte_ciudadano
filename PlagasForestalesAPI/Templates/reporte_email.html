@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f6f8;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background: #f4f6f8;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 700px;
+            background: #ffffff;
+            margin: auto;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .header {
+            background: #2D6A4F;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+            .header h1 {
+                margin: 0;
+                font-size: 24px;
+            }
+
+            .header p {
+                margin-top: 8px;
+                opacity: 0.9;
+            }
+
+        .content {
+            padding: 30px 24px;
+        }
+
+        .folio {
+            background: #EAF3DE;
+            color: #2D6A4F;
+            text-align: center;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #2D6A4F;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .info-table td {
+                padding: 12px;
+                border-bottom: 1px solid #e5e5e5;
+                font-size: 14px;
+            }
+
+        .label {
+            width: 35%;
+            background: #fafafa;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .description {
+            background: #f8f8f8;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 10px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .map-button {
+            display: inline-block;
+            background: #2D6A4F;
+            color: white !important;
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .alert {
+            background: #FFF8E1;
+            color: #8A6D3B;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .footer {
+            background: #f8f8f8;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        @media only screen and (max-width:600px) {
+
+            .content {
+                padding: 20px 16px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .folio {
+                font-size: 20px;
+            }
+
+            .info-table td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .label {
+                background: #ffffff;
+                padding-bottom: 2px;
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="container">
+
+            <div class="header">
+                <h1>Reporte de Plaga Forestal</h1>
+                <p>Gerencia de Sanidad Forestal - CONAFOR</p>
+            </div>
+
+            <div class="content">
+
+                <div class="folio">
+                    Folio: {{FOLIO}}
+                </div>
+
+                <div class="section-title">
+                    Información del reporte
+                </div>
+
+                <table class="info-table">
+
+                    <tr>
+                        <td class="label">Tipo de plaga</td>
+                        <td>{{TIPO_PLAGA}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Estado</td>
+                        <td>{{ESTADO}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Municipio</td>
+                        <td>{{MUNICIPIO}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Localidad</td>
+                        <td>{{LOCALIDAD}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Árboles afectados</td>
+                        <td>{{ARBOLES}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Latitud</td>
+                        <td>{{LATITUD}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Longitud</td>
+                        <td>{{LONGITUD}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Fecha</td>
+                        <td>{{FECHA}}</td>
+                    </tr>
+
+                </table>
+
+                <div class="section-title" style="margin-top:25px;">
+                    Descripción
+                </div>
+
+                <div class="description">
+                    {{DESCRIPCION}}
+                </div>
+
+                <div class="button-container">
+                    <a class="map-button"
+                       href="https://maps.google.com/?q={{LATITUD}},{{LONGITUD}}"
+                       target="_blank">
+
+                        Abrir ubicación en Google Maps
+
+                    </a>
+                </div>
+
+                <div class="alert">
+                    Este reporte requiere validación y seguimiento institucional.
+                </div>
+
+            </div>
+
+            <div class="footer">
+                Sistema de Reporte Ciudadano de Plagas Forestales<br>
+                Comisión Nacional Forestal (CONAFOR)
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

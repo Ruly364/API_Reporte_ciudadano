@@ -1,0 +1,64 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio Code
+.vscode/
+
+# User-specific project files
+*.csproj.user
+
+# Test results
+TestResults/
+*.trx
+
+# Logs
+*.log
+
+# ASP.NET Core local development
+appsettings.Local.json
+
+# Environment files
+.env
+.env.*
+
+# Secrets / certificates
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Publish output
+publish/
+[Pp]ublish/
+
+# NuGet
+*.nupkg
+*.snupkg
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# API uploaded files
+PlagasForestalesAPI/Uploads/
+
+# Generated files
+PlagasForestalesAPI/bin/
+PlagasForestalesAPI/obj/
+
+# Configuración local con secretos
+appsettings.Development.json
+appsettings.Local.json
+appsettings.json

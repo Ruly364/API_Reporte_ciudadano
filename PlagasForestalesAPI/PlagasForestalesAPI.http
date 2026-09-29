@@ -1,0 +1,6 @@
+@PlagasForestalesAPI_HostAddress = http://localhost:5036
+
+GET {{PlagasForestalesAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
